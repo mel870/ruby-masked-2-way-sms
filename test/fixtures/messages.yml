@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  to: MyString
+  from: MyString
+  agent_id: 1
+  customer_id: 1
+  text: MyString
+  type: 
+
+two:
+  to: MyString
+  from: MyString
+  agent_id: 1
+  customer_id: 1
+  text: MyString
+  type: 

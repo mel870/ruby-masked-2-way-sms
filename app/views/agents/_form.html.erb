@@ -1,0 +1,38 @@
+<%= form_for @agent, :html => { :class => "form-horizontal agent" } do |f| %>
+
+    <% if @agent.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@agent.errors.count, "error") %> prohibited this agent from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @agent.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :bw_phone_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bw_phone_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@agent[:bw_phone_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :agent_phone_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :agent_phone_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@agent[:agent_phone_number]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            agents_path, :class => 'btn btn-default' %>
+
+<% end %>
